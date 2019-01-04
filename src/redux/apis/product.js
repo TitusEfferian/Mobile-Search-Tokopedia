@@ -1,11 +1,8 @@
 import axios from 'axios'
 
-export function productApi() {
-    return axios.get('https://www.ralali.com/home/quick-search')
-        .then(function (result) {
-            return result.data
-        })
-        .catch(function (err) {
-            return err
-        })
+export function productApi(payload) {
+    return fetch('http://localhost:1234/api/v1/tokopedia/'+payload)
+    .then(function(result){
+        return result.json()
+    })
 }
